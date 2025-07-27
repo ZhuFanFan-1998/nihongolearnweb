@@ -9,7 +9,7 @@ const app = express();
 
 const server = require('http').createServer(app);
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 // Connect to the database

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './HomePage.css'; // 样式文件，稍后定义
 import { useNavigate } from 'react-router-dom';
-// import { useUser } from '../context/UserContext';
+import { useUser } from '../context/UserContext';
 
-const API_URL = 'http://localhost:3000/api'; // 后端 API 地址
+const API_URL = `http://${import.meta.env.VITE_WS_HOST}:${import.meta.env.VITE_WS_PORT}/api`; // 后端 API 地址
 
 function HomePage() {
     const [form, setForm] = useState({ name: '', learnAmount: '', winAmount: '' });
@@ -12,7 +12,7 @@ function HomePage() {
     const [success, setSuccess] = useState('');
     const [users, setUsers] = useState([]);
     const navigate = useNavigate(); // 用于跳转
-    // const { name, setName } = useUser();
+    const { name, setName } = useUser();
 
     // 获取所有用户
     const fetchUsers = async () => {
@@ -51,7 +51,8 @@ function HomePage() {
         const exists = users.some(user => user.name === form.name);
         if (exists) {
             alert(`${form.name}が登録されました！`);
-            navigate('/match'); // 跳转至PK
+            setName(form.name);
+            navigate('/menu'); // 跳转至菜单
             return;
         }
 
