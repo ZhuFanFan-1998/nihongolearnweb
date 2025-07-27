@@ -16,6 +16,7 @@ app.use(express.json());
 connectDB();
 // Initialize HTTP ROUTES
 app.use('/api', apiRoutes);
+
 // Initialize UI PORT
 app.use(cors({ origin: 'http://localhost:4173' }));
 
