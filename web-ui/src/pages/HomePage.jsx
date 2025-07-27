@@ -24,6 +24,7 @@ function HomePage() {
         }
     };
 
+
     useEffect(() => {
         fetchUsers();
     }, []);

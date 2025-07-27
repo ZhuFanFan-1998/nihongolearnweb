@@ -1,3 +1,4 @@
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,46 +18,37 @@
   background-repeat: no-repeat;
 }
 
-/*
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
   min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background: #f7f9fa; /* 可选的浅色背景 */
+  font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans', 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.cancel-button {
+    background-color: #f0f0f0; /* 浅灰色背景 */
+    color: #666; /* 深灰色文字 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+    padding: 8px 16px; /* 内边距 */
+    font-size: 14px; /* 字体大小 */
+    cursor: pointer; /* 鼠标悬停时为指针 */
+    transition: background-color 0.2s, transform 0.1s; /* 添加过渡效果 */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.cancel-button:hover {
+    background-color: #e0e0e0; /* 悬停时稍微变暗 */
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.cancel-button:active {
+    transform: scale(0.95); /* 点击时缩小 */
 }
 */
 
@@ -69,7 +61,6 @@ button {
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  /* box-shadow: 0 4px 16px rgb(202, 134, 175); */
   cursor: pointer;
   transition: background 0.3s, transform 0.15s, box-shadow 0.3s;
   outline: none;
@@ -78,21 +69,19 @@ button {
 button:hover, .fancy-btn:focus {
   background: linear-gradient(90deg, rgb(211, 123, 176) 0%, rgb(240, 206, 229) 100%);
   transform: translateY(-2px) scale(1.03);
-  /* box-shadow: 0 8px 24px rgba(51, 88, 244, 0.18); */
 }
 
-/*
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.loader {
+    border: 4px solid #eee;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
 }
 
-*/
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
