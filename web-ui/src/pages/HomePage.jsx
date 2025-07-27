@@ -95,7 +95,7 @@ function HomePage() {
 
                 {error && <p className="error">{error}</p>}
                 {success && <p className="success fade-out">{success}</p>}
-                <button type="submit">始めましょう</button>
+                <button className='fancy-btn' type="submit">始めましょう</button>
             </form>
             <div className="List">
                 <h2>ユーザー一覧: </h2>
