@@ -11,7 +11,10 @@ function HomePage() {
             return;
         }
 
-        navigate('/match');
+        navigate('/menu', {
+            state: { userName: name }}
+        );
+        
     };
 
 
