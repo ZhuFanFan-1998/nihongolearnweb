@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import MatchPage from './pages/MatchPage';
+import MatchPage from './pages/MatchWaitingPage';
 import { UserProvider } from './context/UserContext';
+
+import MenuPage from "./pages/MenuPage"
 
 function App() {
   return (
@@ -9,10 +11,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/match" element={<MatchPage />} />
-        {/* <Routes path="/game" element={<GamePage />} /> */}
-        {/* <Routes path="/result" element={<ResultPage />} /> */}
-        {/* <Routes path="/loading" element={<LoadingPage />} /> */}
+          <Route path="/matchWaiting" element={<MatchPage />} />
+          <Route path="/menu" element={<MenuPage />} />
         </Routes>
       </Router>
     </UserProvider>
